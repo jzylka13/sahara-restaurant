@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Catering — Sahara Cafe &amp; Grill</title>
+<meta name="description" content="Catering by Sahara Cafe & Grill in Richmond, VA — Yemeni feasts, Mediterranean mezze, grill platters, and dessert spreads for events of any size. Call (804) 833-8223." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta name="theme-color" content="#9d422b" />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          surface: "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#eff4ff",
+          "surface-container": "#e6eeff",
+          "on-surface": "#121c2a",
+          "on-surface-variant": "#554336",
+          primary: "#8d4b00",
+          "on-primary": "#ffffff",
+          "primary-container": "#b15f00",
+          "primary-fixed-dim": "#ffb77d",
+          secondary: "#9d422b",
+          "on-secondary": "#ffffff",
+          tertiary: "#55612e",
+          cream: "#FDFBF7",
+          "divider-soft": "#F3E9E5",
+        },
+        fontFamily: {
+          serif: ['"Noto Serif"', "serif"],
+          sans: ['"Inter"', "system-ui", "sans-serif"],
+        },
+        maxWidth: { container: "1280px" },
+        boxShadow: {
+          card: "0 4px 16px rgba(157,66,43,0.12)",
+          float: "0 8px 32px rgba(157,66,43,0.20)",
+          header: "0 4px 16px rgba(157,66,43,0.08)",
+          bottomnav: "0 -4px 16px rgba(157,66,43,0.08)",
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #FDFBF7; color: #121c2a; font-family: "Inter", system-ui, sans-serif; }
+  h1, h2, h3, h4 { font-family: "Noto Serif", serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+  .label-caps { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; }
+  .h1-display { font-size: clamp(2rem, 5.5vw, 3rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+  .h2-display { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
+  .body-lg { font-size: 1.125rem; line-height: 1.6; }
+  .body-md { font-size: 1rem; line-height: 1.6; }
+
+  #mobileMenu { transform: translateX(-100%); transition: transform 0.3s ease; }
+  #mobileMenu.open { transform: translateX(0); }
+  body.menu-open { overflow: hidden; }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+  @media (max-width: 767px) { main { padding-bottom: 6rem; } }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- ===================== HEADER ===================== -->
+<header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-sm border-b border-divider-soft shadow-header">
+  <div class="max-w-container mx-auto flex items-center justify-between px-4 md:px-12 h-16 md:h-20">
+    <button id="menuToggle" class="md:hidden text-primary active:scale-95 transition-transform" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <a href="index.html" class="font-serif font-bold text-secondary text-xl md:text-2xl tracking-tight">
+      Sahara Cafe &amp; Grill
+    </a>
+    <nav class="hidden md:flex gap-8 items-center font-serif">
+      <a href="menu.html" class="text-on-surface/70 hover:text-primary transition-colors">Menu</a>
+      <a href="catering.html" class="text-primary border-b-2 border-primary pb-1">Catering</a>
+      <a href="index.html#about" class="text-on-surface/70 hover:text-primary transition-colors">About</a>
+      <a href="index.html#visit" class="text-on-surface/70 hover:text-primary transition-colors">Visit</a>
+    </nav>
+    <div class="flex items-center gap-3 md:gap-4">
+      <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+         target="_blank" rel="noopener noreferrer"
+         class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2 rounded-lg font-medium hover:bg-primary-container transition-colors active:scale-95">
+        Order Now
+      </a>
+      <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+         target="_blank" rel="noopener noreferrer"
+         class="sm:hidden text-primary" aria-label="Order on Grubhub">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MOBILE MENU DRAWER ===================== -->
+<div id="mobileMenu" class="md:hidden fixed inset-0 z-50 bg-cream pt-20 px-6">
+  <button id="menuClose" class="absolute top-5 right-5 text-primary" aria-label="Close menu">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <nav class="flex flex-col gap-6 font-serif text-2xl">
+    <a href="menu.html" class="text-on-surface hover:text-primary">Menu</a>
+    <a href="catering.html" class="text-primary">Catering</a>
+    <a href="index.html#about" class="text-on-surface hover:text-primary">About</a>
+    <a href="index.html#visit" class="text-on-surface hover:text-primary">Visit</a>
+    <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+       target="_blank" rel="noopener noreferrer"
+       class="mt-4 inline-flex w-max bg-primary text-on-primary px-6 py-3 rounded-lg font-sans text-base">Order on Grubhub</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="relative min-h-[420px] md:min-h-[520px] flex items-end overflow-hidden">
+    <img src="photos/feast.jpg"
+         alt="A large communal Yemeni feast platter with hands reaching in to share — a typical Sahara catering scene"
+         class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20"></div>
+    <div class="relative z-10 max-w-container mx-auto px-6 md:px-12 pb-12 md:pb-16 pt-20">
+      <p class="label-caps text-primary-fixed-dim mb-3">Catering</p>
+      <h1 class="h1-display text-white mb-4 drop-shadow-md max-w-3xl">
+        Yemeni feasts &amp; Mediterranean spreads, made for any size group.
+      </h1>
+      <p class="body-lg text-white/90 max-w-2xl">
+        From small office lunches to weddings and big family gatherings — we'll bring the platters.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT WE CATER ===================== -->
+  <section class="py-16 md:py-24 px-6 md:px-12 max-w-container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+      <div>
+        <p class="label-caps text-secondary mb-3">What We Cater</p>
+        <h2 class="h2-display text-on-surface mb-6">Built around your headcount.</h2>
+        <p class="body-lg text-on-surface-variant mb-4">
+          We've catered intimate dinners and 100+ guest events. Tell us how many you're feeding,
+          when, and where — we'll put together a spread.
+        </p>
+        <p class="body-md text-on-surface-variant">
+          Most events are served family-style on large platters — the way Yemeni meals are
+          meant to be eaten. Trays, individual portions, and pickup-ready boxes are also available.
+        </p>
+      </div>
+      <div>
+        <p class="label-caps text-secondary mb-3">Popular For</p>
+        <h2 class="h2-display text-on-surface mb-6">A few things we're known for at events.</h2>
+        <ul class="space-y-3 body-md text-on-surface-variant">
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">restaurant</span><span><strong class="text-on-surface">Whole roasted lamb</strong> over basmati rice — the centerpiece</span></li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">outdoor_grill</span><span><strong class="text-on-surface">Mixed grill platters</strong> — kabobs, kafta, lamb chops</span></li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">tapas</span><span><strong class="text-on-surface">Mezze trays</strong> — hummus, falafel, dolma, tabbouleh, fattoush</span></li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">rice_bowl</span><span><strong class="text-on-surface">Mandi &amp; Kabsa</strong> — for groups large and small</span></li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">cake</span><span><strong class="text-on-surface">Dessert trays</strong> — baklava, basbosa, kinafa, umm ali</span></li>
+          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">local_cafe</span><span><strong class="text-on-surface">Coffee &amp; juice service</strong> — Turkish coffee, Adeni tea, fresh juice</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PHOTO GRID ===================== -->
+  <section class="bg-surface-container-low py-16 md:py-24 px-6 md:px-12">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="label-caps text-secondary mb-3">From Past Events</p>
+        <h2 class="h2-display text-on-surface mb-4">A look at what we've put out.</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <img src="photos/catering.jpg"
+             alt="Catering trays — falafel, stuffed grape leaves, eggplant and chopped salad"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+        <img src="photos/catering%202.jpg"
+             alt="Close-up of catering trays with stacked falafel and grape leaves"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+        <img src="photos/specialty.jpg"
+             alt="Whole roasted lamb on a bed of basmati rice with almonds and lemon"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+        <img src="photos/image%204.jpg"
+             alt="Whole grilled chicken on saffron rice — a feast platter"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT CTA ===================== -->
+  <section class="py-16 md:py-24 px-6 md:px-12 max-w-container mx-auto">
+    <div class="rounded-xl overflow-hidden relative shadow-float">
+      <div class="absolute inset-0 bg-gradient-to-br from-secondary to-primary"></div>
+      <div class="relative z-10 text-center text-white p-10 md:p-16">
+        <p class="label-caps text-primary-fixed-dim mb-3">Place Your Order</p>
+        <h2 class="h2-display mb-4">Tell us about your event.</h2>
+        <p class="body-lg text-white/90 max-w-xl mx-auto mb-10">
+          Call or email with your headcount, date, and any preferences.
+          We'll get back to you the same day with a quote and menu.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
+          <a href="tel:+18048338223"
+             class="flex-1 inline-flex items-center justify-center gap-2 bg-white text-secondary px-7 py-4 rounded-lg label-caps hover:-translate-y-0.5 transition-transform">
+            <span class="material-symbols-outlined">phone</span>
+            (804) 833-8223
+          </a>
+          <a href="mailto:saharacaferva@gmail.com?subject=Catering%20Inquiry&body=Hi%20Sahara%2C%0A%0AI%27m%20looking%20to%20cater%20an%20event.%0A%0AHeadcount%3A%20%0ADate%3A%20%0ATime%3A%20%0ALocation%3A%20%0AAny%20preferences%2Fallergies%3A%20%0A%0AThanks%21"
+             class="flex-1 inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/40 backdrop-blur-sm px-7 py-4 rounded-lg label-caps hover:-translate-y-0.5 transition-transform">
+            <span class="material-symbols-outlined">mail</span>
+            Email Us
+          </a>
+        </div>
+        <p class="text-sm text-white/70 mt-8">
+          Or stop by — 804 W Broad Street, Richmond, VA. Open daily 9 AM – 2 AM.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-cream border-t border-divider-soft">
+  <div class="max-w-container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-12 md:py-16 px-6 md:px-12">
+    <div class="flex flex-col gap-3">
+      <span class="font-serif italic text-lg text-on-surface">Sahara Cafe &amp; Grill</span>
+      <p class="text-sm text-on-surface-variant max-w-xs">
+        © 2026 Sahara Cafe &amp; Grill. Modern Yemeni Hospitality.
+      </p>
+    </div>
+    <div class="flex flex-col gap-2 text-sm text-on-surface-variant">
+      <a href="https://maps.google.com/?q=804+W+Broad+St,+Richmond,+VA"
+         target="_blank" rel="noopener noreferrer"
+         class="hover:text-primary transition-colors">804 W Broad St, Richmond, VA</a>
+      <a href="tel:+18048338223" class="hover:text-primary transition-colors">(804) 833-8223</a>
+      <a href="mailto:saharacaferva@gmail.com" class="hover:text-primary transition-colors">saharacaferva@gmail.com</a>
+    </div>
+    <div class="flex flex-col gap-2 text-sm text-on-surface-variant md:items-end">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <a href="menu.html" class="hover:text-primary transition-colors">Full Menu</a>
+      <a href="https://www.facebook.com/SaharaCafeAndGrill/"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-1.5 hover:text-primary transition-colors">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
+        </svg>
+        Follow on Facebook
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== MOBILE BOTTOM NAV ===================== -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cream border-t border-divider-soft shadow-bottomnav">
+  <div class="flex justify-around items-center h-20 pb-safe">
+    <a href="index.html" class="flex flex-col items-center text-on-surface/60 hover:text-secondary transition-colors">
+      <span class="material-symbols-outlined mb-1">home</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Home</span>
+    </a>
+    <a href="menu.html" class="flex flex-col items-center text-on-surface/60 hover:text-secondary transition-colors">
+      <span class="material-symbols-outlined mb-1">restaurant_menu</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Menu</span>
+    </a>
+    <a href="catering.html" class="flex flex-col items-center text-secondary">
+      <span class="material-symbols-outlined filled mb-1">restaurant</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Catering</span>
+    </a>
+    <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+       target="_blank" rel="noopener noreferrer"
+       class="flex flex-col items-center text-on-surface/60 hover:text-secondary transition-colors">
+      <span class="material-symbols-outlined mb-1">receipt_long</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Order</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+  const menu = document.getElementById('mobileMenu');
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    menu.classList.add('open'); document.body.classList.add('menu-open');
+  });
+  document.getElementById('menuClose').addEventListener('click', () => {
+    menu.classList.remove('open'); document.body.classList.remove('menu-open');
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open'); document.body.classList.remove('menu-open');
+  }));
+</script>
+
+</body>
+</html>
