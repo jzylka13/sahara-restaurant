@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Catering — Sahara Cafe &amp; Grill</title>
-<meta name="description" content="Catering by Sahara Cafe & Grill in Richmond, VA — Yemeni feasts, Mediterranean mezze, grill platters, and dessert spreads for events of any size. Call (804) 833-8223." />
+<title>Sahara Hookah — Lounge in Richmond, VA</title>
+<meta name="description" content="Sahara Hookah — premium hookah lounge at 802 W Broad Street, Richmond, VA. Open Wednesday through Sunday, 5 PM to 2 AM." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta name="theme-color" content="#9d422b" />
 
@@ -58,10 +58,11 @@
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
   .label-caps { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; }
-  .h1-display { font-size: clamp(2rem, 5.5vw, 3rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+  .h1-display { font-size: clamp(2.25rem, 6vw, 3.75rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
   .h2-display { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
   .body-lg { font-size: 1.125rem; line-height: 1.6; }
   .body-md { font-size: 1rem; line-height: 1.6; }
+  .hero-text-shadow { text-shadow: 0 2px 24px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4); }
 
   #mobileMenu { transform: translateX(-100%); transition: transform 0.3s ease; }
   #mobileMenu.open { transform: translateX(0); }
@@ -85,8 +86,8 @@
     </a>
     <nav class="hidden md:flex gap-8 items-center font-serif">
       <a href="menu.html" class="text-on-surface/70 hover:text-primary transition-colors">Menu</a>
-      <a href="catering.html" class="text-primary border-b-2 border-primary pb-1">Catering</a>
-      <a href="lounge.html" class="text-on-surface/70 hover:text-primary transition-colors">Lounge</a>
+      <a href="catering.html" class="text-on-surface/70 hover:text-primary transition-colors">Catering</a>
+      <a href="lounge.html" class="text-primary border-b-2 border-primary pb-1">Lounge</a>
       <a href="index.html#visit" class="text-on-surface/70 hover:text-primary transition-colors">Visit</a>
     </nav>
     <div class="flex items-center gap-3 md:gap-4">
@@ -111,8 +112,8 @@
   </button>
   <nav class="flex flex-col gap-6 font-serif text-2xl">
     <a href="menu.html" class="text-on-surface hover:text-primary">Menu</a>
-    <a href="catering.html" class="text-primary">Catering</a>
-    <a href="lounge.html" class="text-on-surface hover:text-primary">Lounge</a>
+    <a href="catering.html" class="text-on-surface hover:text-primary">Catering</a>
+    <a href="lounge.html" class="text-primary">Lounge</a>
     <a href="index.html#visit" class="text-on-surface hover:text-primary">Visit</a>
     <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
        target="_blank" rel="noopener noreferrer"
@@ -123,89 +124,107 @@
 <main>
 
   <!-- ===================== HERO ===================== -->
-  <section class="px-6 md:px-12 max-w-container mx-auto pt-12 md:pt-20 pb-12 md:pb-16">
-    <div class="max-w-3xl mx-auto text-center mb-10 md:mb-14">
-      <p class="label-caps text-secondary mb-3">Catering</p>
-      <h1 class="h1-display text-on-surface mb-5">
-        Yemeni feasts &amp; Mediterranean spreads, made for any size group.
+  <section class="relative min-h-[480px] md:min-h-[600px] flex items-end overflow-hidden">
+    <img src="photos/kabob.jpg"
+         alt="Smoky atmosphere — kabobs grilling over open flame"
+         class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/65 to-black/30"></div>
+    <div class="relative z-10 max-w-container mx-auto px-6 md:px-12 pb-12 md:pb-20 pt-24 w-full">
+      <p class="label-caps text-primary-fixed-dim mb-3 hero-text-shadow">Sahara Hookah · Next Door</p>
+      <h1 class="h1-display text-white mb-5 hero-text-shadow max-w-3xl">
+        Premium hookah, late nights, just a door over.
       </h1>
-      <p class="body-lg text-on-surface-variant mb-8">
-        From small office lunches to weddings and big family gatherings — we'll bring the platters.
+      <p class="body-lg text-white max-w-2xl mb-8 hero-text-shadow">
+        Open Wednesday through Sunday, 5 PM to 2 AM. Step out of the cafe and into the lounge — same block, different vibe.
       </p>
-      <a href="#contact" class="inline-flex items-center gap-2 bg-primary text-on-primary px-7 py-3 rounded-lg label-caps shadow-card hover:-translate-y-0.5 transition-transform">
-        Place Your Order
-        <span class="material-symbols-outlined text-base">arrow_forward</span>
-      </a>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-start">
-      <img src="photos/catering%203.jpg"
-           alt="Mezze platters — hummus, baba ghanoush, dolma, tabbouleh and falafel with garlic sauce"
-           class="w-full h-auto rounded-xl shadow-card" />
-      <img src="photos/catering%202.jpg"
-           alt="Catering spread — dolma, falafel, grilled cauliflower, and chopped salad on platters and trays"
-           class="w-full h-auto rounded-xl shadow-card" />
-      <img src="photos/catering%201.jpg"
-           alt="Tray of fresh-baked baklava topped with crushed pistachios"
-           class="w-full h-auto rounded-xl shadow-card" />
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <a href="https://maps.google.com/?q=802+W+Broad+St,+Richmond,+VA"
+           target="_blank" rel="noopener noreferrer"
+           class="bg-primary text-on-primary px-7 py-3 rounded-lg label-caps shadow-card hover:-translate-y-0.5 transition-transform text-center inline-flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-base">location_on</span>
+          Get Directions
+        </a>
+        <a href="https://www.instagram.com/sahara_hookahh/"
+           target="_blank" rel="noopener noreferrer"
+           class="bg-white/10 backdrop-blur-sm text-white border border-white/60 px-7 py-3 rounded-lg label-caps hover:-translate-y-0.5 transition-transform text-center inline-flex items-center justify-center gap-2">
+            Follow on Instagram
+            <span class="material-symbols-outlined text-base">open_in_new</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ===================== WHAT WE CATER ===================== -->
+  <!-- ===================== HOURS + ADDRESS ===================== -->
   <section class="py-16 md:py-24 px-6 md:px-12 max-w-container mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
       <div>
-        <p class="label-caps text-secondary mb-3">What We Cater</p>
-        <h2 class="h2-display text-on-surface mb-6">Built around your headcount.</h2>
+        <p class="label-caps text-secondary mb-3">The Lounge</p>
+        <h2 class="h2-display text-on-surface mb-6">Right next to the cafe.</h2>
         <p class="body-lg text-on-surface-variant mb-4">
-          We've catered intimate dinners and 100+ guest events. Tell us how many you're feeding,
-          when, and where — we'll put together a spread.
+          Sahara Hookah lives at <strong class="text-on-surface">802 W Broad Street</strong> — literally next door to the grill at 804.
+          Grab dinner at the cafe, slide over to the lounge.
         </p>
         <p class="body-md text-on-surface-variant">
-          Most events are served family-style on large platters — the way Yemeni meals are
-          meant to be eaten. Trays, individual portions, and pickup-ready boxes are also available.
+          Premium shisha, ice-chilled hoses, and the same Yemeni hospitality you get next door. Designed for groups, conversations, and slow late nights.
         </p>
       </div>
-      <div>
-        <p class="label-caps text-secondary mb-3">Popular For</p>
-        <h2 class="h2-display text-on-surface mb-6">A few things we're known for at events.</h2>
-        <ul class="space-y-3 body-md text-on-surface-variant">
-          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">restaurant</span><span><strong class="text-on-surface">Whole roasted lamb</strong> over basmati rice — the centerpiece</span></li>
-          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">outdoor_grill</span><span><strong class="text-on-surface">Mixed grill platters</strong> — kabobs, kafta, lamb chops</span></li>
-          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">tapas</span><span><strong class="text-on-surface">Mezze trays</strong> — hummus, falafel, dolma, tabbouleh, fattoush</span></li>
-          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">rice_bowl</span><span><strong class="text-on-surface">Mandi &amp; Kabsa</strong> — for groups large and small</span></li>
-          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">cake</span><span><strong class="text-on-surface">Dessert trays</strong> — baklava, basbosa, kinafa, umm ali</span></li>
-          <li class="flex gap-3"><span class="material-symbols-outlined text-primary">local_cafe</span><span><strong class="text-on-surface">Coffee &amp; juice service</strong> — Turkish coffee, Adeni tea, fresh juice</span></li>
-        </ul>
+
+      <div class="bg-white rounded-xl p-8 shadow-card border border-divider-soft">
+        <div class="flex items-start gap-4 mb-6">
+          <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+          <div>
+            <h4 class="font-serif font-semibold text-lg">Address</h4>
+            <p class="body-md text-on-surface-variant">
+              <a href="https://maps.google.com/?q=802+W+Broad+St,+Richmond,+VA"
+                 target="_blank" rel="noopener noreferrer"
+                 class="hover:text-primary transition-colors">
+                802 W Broad Street<br />Richmond, VA 23220
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 mb-6">
+          <span class="material-symbols-outlined text-primary mt-1">schedule</span>
+          <div>
+            <h4 class="font-serif font-semibold text-lg">Hours</h4>
+            <p class="body-md text-on-surface-variant">
+              Wednesday – Sunday<br />
+              <span class="font-semibold text-on-surface">5:00 PM – 2:00 AM</span><br />
+              <span class="text-sm text-on-surface-variant/80">Closed Monday &amp; Tuesday</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary mt-1">photo_camera</span>
+          <div>
+            <h4 class="font-serif font-semibold text-lg">Latest from the Lounge</h4>
+            <p class="body-md text-on-surface-variant">
+              Photos &amp; updates on
+              <a href="https://www.instagram.com/sahara_hookahh/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="text-primary hover:underline">@sahara_hookahh</a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== CONTACT CTA ===================== -->
-  <section id="contact" class="py-16 md:py-24 px-6 md:px-12 max-w-container mx-auto">
-    <div class="rounded-xl overflow-hidden relative shadow-float">
-      <div class="absolute inset-0 bg-gradient-to-br from-secondary to-primary"></div>
-      <div class="relative z-10 text-center text-white p-10 md:p-16">
-        <p class="label-caps text-primary-fixed-dim mb-3">Place Your Order</p>
-        <h2 class="h2-display mb-4">Tell us about your event.</h2>
-        <p class="body-lg text-white/90 max-w-xl mx-auto mb-10">
-          Call or email with your headcount, date, and any preferences.
-          We'll get back to you the same day with a quote and menu.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
-          <a href="tel:+18048338223"
-             class="flex-1 inline-flex items-center justify-center gap-2 bg-white text-secondary px-7 py-4 rounded-lg label-caps hover:-translate-y-0.5 transition-transform">
-            <span class="material-symbols-outlined">phone</span>
-            (804) 833-8223
-          </a>
-          <a href="mailto:saharacaferva@gmail.com?subject=Catering%20Inquiry&body=Hi%20Sahara%2C%0A%0AI%27m%20looking%20to%20cater%20an%20event.%0A%0AHeadcount%3A%20%0ADate%3A%20%0ATime%3A%20%0ALocation%3A%20%0AAny%20preferences%2Fallergies%3A%20%0A%0AThanks%21"
-             class="flex-1 inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/40 backdrop-blur-sm px-7 py-4 rounded-lg label-caps hover:-translate-y-0.5 transition-transform">
-            <span class="material-symbols-outlined">mail</span>
-            Email Us
-          </a>
-        </div>
-        <p class="text-sm text-white/70 mt-8">
-          Or stop by — 804 W Broad Street, Richmond, VA. Open daily 9 AM – 2 AM.
-        </p>
+  <!-- ===================== MAP ===================== -->
+  <section class="bg-surface-container-low py-16 md:py-24 px-6 md:px-12">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-10 md:mb-12">
+        <p class="label-caps text-secondary mb-3">Find Us</p>
+        <h2 class="h2-display text-on-surface mb-4">802 W Broad — Heart of Richmond.</h2>
+      </div>
+      <div class="h-[360px] md:h-[480px] rounded-xl overflow-hidden bg-surface-container shadow-card">
+        <iframe
+          title="Map of Sahara Hookah at 802 W Broad St, Richmond, VA"
+          src="https://maps.google.com/maps?q=802%20W%20Broad%20St%2C%20Richmond%2C%20VA&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -225,20 +244,24 @@
       <a href="https://maps.google.com/?q=804+W+Broad+St,+Richmond,+VA"
          target="_blank" rel="noopener noreferrer"
          class="hover:text-primary transition-colors">Cafe — 804 W Broad St</a>
-      <a href="lounge.html" class="hover:text-primary transition-colors">Lounge — 802 W Broad St</a>
+      <a href="https://maps.google.com/?q=802+W+Broad+St,+Richmond,+VA"
+         target="_blank" rel="noopener noreferrer"
+         class="hover:text-primary transition-colors">Lounge — 802 W Broad St</a>
       <a href="tel:+18048338223" class="hover:text-primary transition-colors">(804) 833-8223</a>
-      <a href="mailto:saharacaferva@gmail.com" class="hover:text-primary transition-colors">saharacaferva@gmail.com</a>
     </div>
     <div class="flex flex-col gap-2 text-sm text-on-surface-variant md:items-end">
       <a href="index.html" class="hover:text-primary transition-colors">Home</a>
       <a href="menu.html" class="hover:text-primary transition-colors">Full Menu</a>
+      <a href="https://www.instagram.com/sahara_hookahh/"
+         target="_blank" rel="noopener noreferrer"
+         class="hover:text-primary transition-colors">Lounge on Instagram ↗</a>
       <a href="https://www.facebook.com/SaharaCafeAndGrill/"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-1.5 hover:text-primary transition-colors">
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
         </svg>
-        Follow on Facebook
+        Cafe on Facebook
       </a>
     </div>
   </div>
@@ -255,9 +278,9 @@
       <span class="material-symbols-outlined mb-1">restaurant_menu</span>
       <span class="font-serif text-[10px] uppercase tracking-widest">Menu</span>
     </a>
-    <a href="catering.html" class="flex flex-col items-center text-secondary">
-      <span class="material-symbols-outlined filled mb-1">restaurant</span>
-      <span class="font-serif text-[10px] uppercase tracking-widest">Catering</span>
+    <a href="lounge.html" class="flex flex-col items-center text-secondary">
+      <span class="material-symbols-outlined filled mb-1">cloud</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Lounge</span>
     </a>
     <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
        target="_blank" rel="noopener noreferrer"
