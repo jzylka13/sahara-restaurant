@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Menu — Sahara Cafe &amp; Grill</title>
+<meta name="description" content="Full menu for Sahara Cafe & Grill — Yemeni specialties, grill plates, sandwiches, salads, and more. 804 W Broad St, Richmond, VA." />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          surface: "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#eff4ff",
+          "surface-container": "#e6eeff",
+          "on-surface": "#121c2a",
+          "on-surface-variant": "#554336",
+          primary: "#8d4b00",
+          "on-primary": "#ffffff",
+          "primary-container": "#b15f00",
+          "primary-fixed": "#ffdcc3",
+          "primary-fixed-dim": "#ffb77d",
+          secondary: "#9d422b",
+          "on-secondary": "#ffffff",
+          tertiary: "#55612e",
+          cream: "#FDFBF7",
+          "divider-soft": "#F3E9E5",
+        },
+        fontFamily: {
+          serif: ['"Noto Serif"', "serif"],
+          sans: ['"Inter"', "system-ui", "sans-serif"],
+        },
+        maxWidth: { container: "1280px" },
+        boxShadow: {
+          card: "0 4px 16px rgba(157,66,43,0.12)",
+          float: "0 8px 32px rgba(157,66,43,0.20)",
+          header: "0 4px 16px rgba(157,66,43,0.08)",
+          bottomnav: "0 -4px 16px rgba(157,66,43,0.08)",
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #FDFBF7; color: #121c2a; font-family: "Inter", system-ui, sans-serif; }
+  h1, h2, h3, h4 { font-family: "Noto Serif", serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+  .label-caps { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; }
+  .h1-display { font-size: clamp(2rem, 5.5vw, 3rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+  .h2-display { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
+  .body-lg { font-size: 1.125rem; line-height: 1.6; }
+  .body-md { font-size: 1rem; line-height: 1.6; }
+
+  /* Mobile menu drawer */
+  #mobileMenu { transform: translateX(-100%); transition: transform 0.3s ease; }
+  #mobileMenu.open { transform: translateX(0); }
+  body.menu-open { overflow: hidden; }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+  /* Hide scrollbar on chip nav */
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  /* Active section chip (set via JS) */
+  .chip { white-space: nowrap; }
+  .chip[data-active="true"] { background: #8d4b00; color: #fff; border-color: #8d4b00; }
+
+  @media (max-width: 767px) { main { padding-bottom: 6rem; } }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- ===================== HEADER ===================== -->
+<header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-sm border-b border-divider-soft shadow-header">
+  <div class="max-w-container mx-auto flex items-center justify-between px-4 md:px-12 h-16 md:h-20">
+    <button id="menuToggle" class="md:hidden text-primary active:scale-95 transition-transform" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <a href="index.html" class="font-serif font-bold text-secondary text-xl md:text-2xl tracking-tight">
+      Sahara Cafe &amp; Grill
+    </a>
+    <nav class="hidden md:flex gap-8 items-center font-serif">
+      <a href="menu.html" class="text-primary border-b-2 border-primary pb-1">Menu</a>
+      <a href="index.html#lounge" class="text-on-surface/70 hover:text-primary transition-colors">Lounge</a>
+      <a href="index.html#about" class="text-on-surface/70 hover:text-primary transition-colors">About</a>
+      <a href="index.html#visit" class="text-on-surface/70 hover:text-primary transition-colors">Visit</a>
+    </nav>
+    <div class="flex items-center gap-3 md:gap-4">
+      <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+         target="_blank" rel="noopener noreferrer"
+         class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2 rounded-lg font-medium hover:bg-primary-container transition-colors active:scale-95">
+        Order Now
+      </a>
+      <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+         target="_blank" rel="noopener noreferrer"
+         class="sm:hidden text-primary" aria-label="Order on Grubhub">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MOBILE MENU DRAWER ===================== -->
+<div id="mobileMenu" class="md:hidden fixed inset-0 z-50 bg-cream pt-20 px-6">
+  <button id="menuClose" class="absolute top-5 right-5 text-primary" aria-label="Close menu">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <nav class="flex flex-col gap-6 font-serif text-2xl">
+    <a href="menu.html" class="text-primary">Menu</a>
+    <a href="index.html#lounge" class="text-on-surface hover:text-primary">Lounge</a>
+    <a href="index.html#about" class="text-on-surface hover:text-primary">About</a>
+    <a href="index.html#visit" class="text-on-surface hover:text-primary">Visit</a>
+    <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+       target="_blank" rel="noopener noreferrer"
+       class="mt-4 inline-flex w-max bg-primary text-on-primary px-6 py-3 rounded-lg font-sans text-base">Order Now</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="px-6 md:px-12 max-w-container mx-auto pt-12 md:pt-20 pb-8 md:pb-12 text-center">
+    <p class="label-caps text-secondary mb-3">Our Menu</p>
+    <h1 class="h1-display text-on-surface mb-5">Yemeni, Mediterranean &amp; More</h1>
+    <p class="body-lg text-on-surface-variant max-w-2xl mx-auto mb-8">
+      From slow-roasted Mandi and Kabsa to fresh-pressed juices and stone-grilled kabobs —
+      a menu rooted in tradition, served with warmth.
+    </p>
+    <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+       target="_blank" rel="noopener noreferrer"
+       class="inline-flex items-center gap-2 bg-primary text-on-primary px-7 py-3 rounded-lg label-caps shadow-card hover:-translate-y-0.5 transition-transform">
+      Order on Grubhub
+      <span class="material-symbols-outlined text-base">open_in_new</span>
+    </a>
+  </section>
+
+  <!-- ===================== SECTION CHIPS NAV (sticky) ===================== -->
+  <div class="sticky top-16 md:top-20 z-30 bg-cream/95 backdrop-blur-sm border-y border-divider-soft">
+    <div class="max-w-container mx-auto px-4 md:px-12 py-3 flex gap-2 overflow-x-auto no-scrollbar text-sm">
+      <a href="#juice-coffee" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Juice &amp; Coffee</a>
+      <a href="#appetizers" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Appetizers</a>
+      <a href="#salads" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Salads</a>
+      <a href="#grill" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">From the Grill</a>
+      <a href="#seafood" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Seafood</a>
+      <a href="#specialties" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">House Specialties</a>
+      <a href="#sandwiches" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Sandwiches</a>
+      <a href="#subs" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Hot Subs</a>
+      <a href="#pasta" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Pasta</a>
+      <a href="#wings" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Wings</a>
+      <a href="#sides" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Sides</a>
+      <a href="#desserts" class="chip border border-divider-soft rounded-full px-4 py-1.5 text-on-surface hover:bg-divider-soft transition-colors">Desserts</a>
+    </div>
+  </div>
+
+  <!-- Section template:
+       <section id="..." class="menu-section py-12 md:py-16 px-6 md:px-12 max-w-container mx-auto scroll-mt-32">
+         <h2 class="h2-display text-on-surface mb-2">Title</h2>
+         <p class="body-md text-on-surface-variant mb-8">Subtitle</p>
+         <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+           <div class="border-b border-divider-soft pb-4">
+             <div class="flex justify-between items-baseline gap-4 mb-1">
+               <h3 class="font-serif text-lg font-semibold text-on-surface">Name</h3>
+               <span class="font-bold text-secondary whitespace-nowrap">$0.00</span>
+             </div>
+             <p class="text-sm text-on-surface-variant">Description</p>
+           </div>
+         </div>
+       </section>
+  -->
+
+  <!-- ===================== JUICE & COFFEE BAR ===================== -->
+  <section id="juice-coffee" class="menu-section py-12 md:py-16 px-6 md:px-12 max-w-container mx-auto scroll-mt-32">
+    <h2 class="h2-display text-on-surface mb-2">Juice &amp; Coffee Bar</h2>
+    <p class="body-md text-on-surface-variant mb-8">Freshly pressed and traditionally brewed.</p>
+    <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Fresh Juice</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$3.50</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Turkish Coffee</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$2.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Arabian Coffee</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$2.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Chai with Milk</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$3.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== APPETIZERS ===================== -->
+  <section id="appetizers" class="menu-section bg-surface-container-low/40 py-12 md:py-16 px-6 md:px-12 scroll-mt-32">
+    <div class="max-w-container mx-auto">
+      <h2 class="h2-display text-on-surface mb-2">Appetizers</h2>
+      <p class="body-md text-on-surface-variant mb-8">Mezze, dips, and small plates to share.</p>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">1. Hummus</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$4.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">A blend of chick peas and tahini dressing topped with olive oil.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">2. Falafel</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">5 pieces. A blend of chick peas, parsley and special spices deep fried. Served with tahini sauce and pita bread.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">3. Regular Foul</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">A blend of fava beans, mixed with lemon, garlic, cumin and olive oil.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">4. Foul with Feta Cheese</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.00</span>
+          </div>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">5. Foul Special</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$8.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Fava beans cooked with onions, tomatoes, garlic and cilantro topped with olive oil.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">6. Stuffed Grape Leaves</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">6 pieces of rolled vine leaves with rice, parsley, tomatoes and lemon juice. Served with yogurt.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">7. Sampoksua</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">4 pieces. Stuffed with ground beef marinated and cooked with special spices, deep fried.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">8. Lentil Soup</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$4.00</span>
+          </div>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">9. Fat Ayer</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Puffed pastries with choice of ground beef, cheese and mint or spinach.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">10. Middle East Sampler</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$11.99</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">A plate with grape leaves hummus, falafel, Arabian salad or tabbouleh.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Basket Sampler</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$11.99</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">3 mozzarella sticks, 3 chicken strips, 3 chicken wings and French fries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SALADS ===================== -->
+  <section id="salads" class="menu-section py-12 md:py-16 px-6 md:px-12 max-w-container mx-auto scroll-mt-32">
+    <h2 class="h2-display text-on-surface mb-2">Special Salads</h2>
+    <p class="body-md text-on-surface-variant mb-8">Crisp, fresh, and made with olive oil.</p>
+    <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">1. Chef Special Salad</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$6.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Tomatoes, cucumbers, green and red peppers, feta cheese and stuffed grape leaves.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">2. Fatuous Salad</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$8.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Chopped tomatoes, cucumber, lettuce, mint, onion, olive oil topped with fried pita.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">4. Arabian Salad</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$8.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Chopped tomatoes, cucumbers, peppers, mint, onions, olive oil and lemon juice.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">5. Chicken Salad</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$9.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Lettuce, tomatoes, cucumbers, peppers, parsley topped with grilled chicken breast.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Tabbouleh</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$8.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Parsley, crushed wheat, mint, tomatoes, green onions, olive oil and lemon juice.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Avocado Salad</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$9.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Avocado, lettuce, arugula, tomato, cucumber, onion, feta cheese and olive oil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FROM THE GRILL ===================== -->
+  <section id="grill" class="menu-section bg-surface-container-low/40 py-12 md:py-16 px-6 md:px-12 scroll-mt-32">
+    <div class="max-w-container mx-auto">
+      <h2 class="h2-display text-on-surface mb-2">From the Grill</h2>
+      <p class="body-md text-on-surface-variant mb-8">Open-flame kabobs, marinated whole cuts, served with rice and salad.</p>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Grilled Small Whole Chicken</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$18.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Served with rice and green salad.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Mix Grill</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$18.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Skewers of lamb, chicken and kafta kabob. Served with rice and salad.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Lamb Chops</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$18.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Ribs marinated in special spices and open-flame grilled. Served with rice and salad.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Lamb Kabob</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$15.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Skewers of 6 pieces marinated in special way and open-flame grilled. Served with rice and green salad.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Chicken Kabob</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$13.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Skewered chicken breast marinated and grilled. Served with rice and salad.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Whole Tilapia Grill</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$16.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Served with rice, small house salad and tahini sauce.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Salmon</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$18.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Grilled salmon served with rice and house salad.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Kosta Kabab</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$13.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Served with rice and house salad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEAFOOD ===================== -->
+  <section id="seafood" class="menu-section py-12 md:py-16 px-6 md:px-12 max-w-container mx-auto scroll-mt-32">
+    <h2 class="h2-display text-on-surface mb-2">Seafood</h2>
+    <p class="body-md text-on-surface-variant mb-8">Whole fish and fillets, prepared to order.</p>
+    <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Oven Baked Whole Tilapia</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$15.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Served with rice and green salad.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Fried Whole Tilapia</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$13.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Served with rice and green salad.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Fillet</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$13.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Served with rice and green salad.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Baked Salmon</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$18.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Served with rice, house salad and tahini sauce.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOUSE SPECIALTIES ===================== -->
+  <section id="specialties" class="menu-section bg-surface-container-low/40 py-12 md:py-16 px-6 md:px-12 scroll-mt-32">
+    <div class="max-w-container mx-auto">
+      <h2 class="h2-display text-on-surface mb-2">House Specialties</h2>
+      <p class="body-md text-on-surface-variant mb-8">Yemeni heritage dishes — slow-cooked, deeply spiced.</p>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">1. Kebdah</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$11.99</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Fresh lamb liver marinated in special spices, garlic, onion and peppers. Served with pita bread.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">2. Lamb Mendy</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$16.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Tender lamb meat marinated and cooked in special spices. Served with rice.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">3. 1/2 Chicken Mendy</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$13.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Freshly baked chicken in special spices. Served with rice.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">5. Lamb Kabsaha</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$16.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Lamb marinated in special spices, cooked with tomato sauce and rice.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">5. Chicken Kabsaha</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$14.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Chicken marinated in special spices, cooked with tomato sauce and rice.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">7. Tagine</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$14.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Moroccan way.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">9. Moussaka</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$14.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Fried eggplant, oven-baked with ground beef, tomatoes, potatoes, garlic and peppers.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Lamb Shank</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$16.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Served with basmati rice, white sauce and hot sauce.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Mahashe</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$14.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Stuffed vegetables (small eggplant, tomatoes, zucchini, potatoes, peppers) with rice and seasoned ground beef in tomato sauce.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Up Side Down</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$16.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">House-marinated chicken and basmati rice cooked with potato, eggplant, carrot, cauliflower and jalapeño.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SANDWICHES ===================== -->
+  <section id="sandwiches" class="menu-section py-12 md:py-16 px-6 md:px-12 max-w-container mx-auto scroll-mt-32">
+    <h2 class="h2-display text-on-surface mb-2">Sandwiches</h2>
+    <p class="body-md text-on-surface-variant mb-8">Wrapped in pita and on Italian bread.</p>
+    <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Open Flame Grilled Cheeseburger</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$7.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Just the sandwich.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Chicken Shawarma Sandwich</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$8.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Thinly sliced chicken breast, garlic sauce, tomatoes and lettuce in pita.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Beef Shawarma Sandwich</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$8.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Thinly sliced beef, tahini sauce, tomatoes and lettuce in pita.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Gyro Sandwich</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$8.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Thinly sliced lamb, zaken sauce, tomatoes, lettuce and onions in gyro bread.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Falafel Sandwich</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$6.00</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Veggie. Falafel, tahini sauce, tomatoes and lettuce in pita.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Philly Cheese Steak (Plain)</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Grilled steak and cheese.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Philly Cheese Steak Hoagie</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Grilled steak, cheese, lettuce, tomatoes and mayo.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Philly Cheese Steak — The Works</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$7.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Steak, onions, green peppers, mushrooms, banana peppers, cheese, lettuce, tomatoes and mayo.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Sahara Philly Steak Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$7.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Steak, onions, pepperoni, lettuce, cheese, tomatoes and mayo.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Grilled Chicken Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Marinated grilled chicken with onions, melted cheese, lettuce, tomatoes, peppers and mayo.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Cheeseburger Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Lettuce, tomatoes, mayo, ketchup and pickles.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Crispy Buffalo Chicken Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Lettuce, tomatoes and mayo.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Vegetarian Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Ham Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Club Classic</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Turkey, turkey-ham and bacon.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Turkey Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Tuna Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Italian Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Turkey-ham, turkey and pepperoni.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Chicken Parmigiana Sub</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOT SUBS ===================== -->
+  <section id="subs" class="menu-section bg-surface-container-low/40 py-12 md:py-16 px-6 md:px-12 scroll-mt-32">
+    <div class="max-w-container mx-auto">
+      <h2 class="h2-display text-on-surface mb-2">Hot Grilled &amp; Baked Subs</h2>
+      <p class="body-md text-on-surface-variant mb-8">Served on our fresh Italian bread.</p>
+
+      <h3 class="font-serif text-xl font-semibold text-secondary mb-4 mt-2">Hot Grilled Subs</h3>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-6 mb-12">
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Philly Steak and Shrimp</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$8.99</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Grilled with onions, lettuce, tomatoes and mayo.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Plain Philly Cheese Steak</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.66</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Grilled steak and cheese.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Philly Cheese Steak Hoagie</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.99</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Steak, cheese, lettuce, tomatoes and mayo.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Philly Cheese Steak with The Works</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.99</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Steak, onions, green peppers, mushrooms, banana peppers, cheese, lettuce, tomatoes and mayo.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Grilled Chicken Sub Special</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.99</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Marinated grilled chicken with onions, melted cheese, lettuce, tomatoes, peppers and mayo.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Cheeseburger Sub</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.99</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Lettuce, tomatoes, mayo, ketchup and pickles.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Crispy Buffalo Chicken Sub</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.99</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Lettuce, tomatoes and mayo.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Vegetarian Sub</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.66</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="font-serif text-xl font-semibold text-secondary mb-4">Hot Baked Italian Subs</h3>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Chicken Parmigiana Sub</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.66</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Baked with marinara sauce and melted mozzarella.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h4 class="font-serif text-lg font-semibold">Meatball Parmigiana Sub</h4>
+            <span class="font-bold text-secondary whitespace-nowrap">$6.66</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Baked with marinara sauce and melted mozzarella.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PASTA ===================== -->
+  <section id="pasta" class="menu-section py-12 md:py-16 px-6 md:px-12 max-w-container mx-auto scroll-mt-32">
+    <h2 class="h2-display text-on-surface mb-2">Pasta Dishes</h2>
+    <p class="body-md text-on-surface-variant mb-8">Topped with mozzarella and served with garlic bread sticks.</p>
+    <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Baked Spaghetti with Marinara</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$6.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Baked Spaghetti with Meatballs</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$8.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Lasagna</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$8.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Chicken Parmigiana</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$9.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Grilled Chicken</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$9.99</span>
+        </div>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Chicken Alfredo</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$9.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Creamy Alfredo sauce.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Shrimp Pasta</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$11.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Marinara sauce.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Shrimp Scampi</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$11.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Garlic butter sauce.</p>
+      </div>
+      <div class="border-b border-divider-soft pb-4">
+        <div class="flex justify-between items-baseline gap-4 mb-1">
+          <h3 class="font-serif text-lg font-semibold">Shrimp Alfredo</h3>
+          <span class="font-bold text-secondary whitespace-nowrap">$11.99</span>
+        </div>
+        <p class="text-sm text-on-surface-variant">Creamy Alfredo sauce.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WINGS ===================== -->
+  <section id="wings" class="menu-section bg-surface-container-low/40 py-12 md:py-16 px-6 md:px-12 scroll-mt-32">
+    <div class="max-w-container mx-auto">
+      <h2 class="h2-display text-on-surface mb-2">Wings</h2>
+      <p class="body-md text-on-surface-variant mb-8">Crispy, mild, hot, or BBQ — bone-in or boneless.</p>
+      <div class="grid md:grid-cols-2 gap-x-10">
+        <div>
+          <h3 class="font-serif text-xl font-semibold text-secondary mb-4">Bone-In</h3>
+          <div class="space-y-6 mb-8 md:mb-0">
+            <div class="border-b border-divider-soft pb-4 flex justify-between items-baseline gap-4">
+              <span class="font-serif text-lg font-semibold">Crispy Wings</span>
+              <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+            </div>
+            <div class="border-b border-divider-soft pb-4 flex justify-between items-baseline gap-4">
+              <span class="font-serif text-lg font-semibold">Mild Wings</span>
+              <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+            </div>
+            <div class="border-b border-divider-soft pb-4 flex justify-between items-baseline gap-4">
+              <span class="font-serif text-lg font-semibold">Hot Wings</span>
+              <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+            </div>
+            <div class="border-b border-divider-soft pb-4 flex justify-between items-baseline gap-4">
+              <span class="font-serif text-lg font-semibold">BBQ Wings</span>
+              <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-semibold text-secondary mb-4">Boneless</h3>
+          <div class="space-y-6">
+            <div class="border-b border-divider-soft pb-4 flex justify-between items-baseline gap-4">
+              <span class="font-serif text-lg font-semibold">Crispy Boneless Wings</span>
+              <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+            </div>
+            <div class="border-b border-divider-soft pb-4 flex justify-between items-baseline gap-4">
+              <span class="font-serif text-lg font-semibold">Mild Boneless Wings</span>
+              <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+            </div>
+            <div class="border-b border-divider-soft pb-4 flex justify-between items-baseline gap-4">
+              <span class="font-serif text-lg font-semibold">Hot Boneless Wings</span>
+              <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+            </div>
+            <div class="border-b border-divider-soft pb-4 flex justify-between items-baseline gap-4">
+              <span class="font-serif text-lg font-semibold">BBQ Boneless Wings</span>
+              <span class="font-bold text-secondary whitespace-nowrap">$5.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SIDES ===================== -->
+  <section id="sides" class="menu-section py-12 md:py-16 px-6 md:px-12 max-w-container mx-auto scroll-mt-32">
+    <h2 class="h2-display text-on-surface mb-2">Sides</h2>
+    <p class="body-md text-on-surface-variant mb-8">Add to any entrée.</p>
+    <div class="grid md:grid-cols-2 gap-x-10 gap-y-4">
+      <div class="border-b border-divider-soft pb-3 flex justify-between items-baseline gap-4">
+        <span class="font-serif text-lg font-semibold">6. French Fries</span>
+        <span class="font-bold text-secondary whitespace-nowrap">$2.69</span>
+      </div>
+      <div class="border-b border-divider-soft pb-3 flex justify-between items-baseline gap-4">
+        <span class="font-serif text-lg font-semibold">7. Macaroni and Cheese</span>
+        <span class="font-bold text-secondary whitespace-nowrap">$4.00</span>
+      </div>
+      <div class="border-b border-divider-soft pb-3 flex justify-between items-baseline gap-4">
+        <span class="font-serif text-lg font-semibold">8. Mashed Potatoes</span>
+        <span class="font-bold text-secondary whitespace-nowrap">$4.00</span>
+      </div>
+      <div class="border-b border-divider-soft pb-3 flex justify-between items-baseline gap-4">
+        <span class="font-serif text-lg font-semibold">10. String Beans</span>
+        <span class="font-bold text-secondary whitespace-nowrap">$4.00</span>
+      </div>
+      <div class="border-b border-divider-soft pb-3 flex justify-between items-baseline gap-4">
+        <span class="font-serif text-lg font-semibold">12. Mixed Veggies</span>
+        <span class="font-bold text-secondary whitespace-nowrap">$4.00</span>
+      </div>
+      <div class="border-b border-divider-soft pb-3 flex justify-between items-baseline gap-4">
+        <span class="font-serif text-lg font-semibold">13. Okra</span>
+        <span class="font-bold text-secondary whitespace-nowrap">$4.00</span>
+      </div>
+      <div class="border-b border-divider-soft pb-3 flex justify-between items-baseline gap-4">
+        <span class="font-serif text-lg font-semibold">Mozzarella Sticks</span>
+        <span class="font-bold text-secondary whitespace-nowrap">$4.99</span>
+      </div>
+      <div class="border-b border-divider-soft pb-3 flex justify-between items-baseline gap-4">
+        <span class="font-serif text-lg font-semibold">Onion Rings</span>
+        <span class="font-bold text-secondary whitespace-nowrap">$2.49</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DESSERTS ===================== -->
+  <section id="desserts" class="menu-section bg-surface-container-low/40 py-12 md:py-16 px-6 md:px-12 scroll-mt-32">
+    <div class="max-w-container mx-auto">
+      <h2 class="h2-display text-on-surface mb-2">Desserts</h2>
+      <p class="body-md text-on-surface-variant mb-8">Sweet endings, Middle-Eastern style.</p>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Kinafa with Cheese</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$5.00</span>
+          </div>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Baklava</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$4.00</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Filled with cashews, walnuts and pecans.</p>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Basbosa</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$3.00</span>
+          </div>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Umm Ali</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$5.00</span>
+          </div>
+        </div>
+        <div class="border-b border-divider-soft pb-4">
+          <div class="flex justify-between items-baseline gap-4 mb-1">
+            <h3 class="font-serif text-lg font-semibold">Rice Pudding</h3>
+            <span class="font-bold text-secondary whitespace-nowrap">$3.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ORDER CTA ===================== -->
+  <section class="py-16 md:py-24 px-6 md:px-12 max-w-container mx-auto">
+    <div class="rounded-xl overflow-hidden relative shadow-float">
+      <div class="absolute inset-0 bg-gradient-to-br from-secondary to-primary"></div>
+      <div class="relative z-10 text-center text-white p-10 md:p-16">
+        <h2 class="h2-display mb-4">Hungry?</h2>
+        <p class="body-lg text-white/90 max-w-xl mx-auto mb-8">
+          Order pickup or delivery directly from Grubhub.
+        </p>
+        <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-white text-secondary px-7 py-3 rounded-lg label-caps hover:-translate-y-0.5 transition-transform">
+          Order on Grubhub
+          <span class="material-symbols-outlined text-base">open_in_new</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-cream border-t border-divider-soft">
+  <div class="max-w-container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-12 md:py-16 px-6 md:px-12">
+    <div class="flex flex-col gap-3">
+      <span class="font-serif italic text-lg text-on-surface">Sahara Cafe &amp; Grill</span>
+      <p class="text-sm text-on-surface-variant max-w-xs">
+        © 2026 Sahara Cafe &amp; Grill. Modern Yemeni Hospitality.
+      </p>
+    </div>
+    <div class="flex flex-col gap-2 text-sm text-on-surface-variant">
+      <a href="https://maps.google.com/?q=804+W+Broad+St,+Richmond,+VA"
+         target="_blank" rel="noopener noreferrer"
+         class="hover:text-primary transition-colors">804 W Broad St, Richmond, VA</a>
+      <a href="index.html#visit" class="hover:text-primary transition-colors">Hours &amp; Contact</a>
+      <a href="https://www.facebook.com/SaharaCafeAndGrill/"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-1.5 hover:text-primary transition-colors">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
+        </svg>
+        Follow on Facebook
+      </a>
+    </div>
+    <div class="flex flex-col gap-2 text-sm text-on-surface-variant md:items-end">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <a href="tel:+18048338223" class="hover:text-primary transition-colors">(804) 833-8223</a>
+      <a href="mailto:saharacaferva@gmail.com" class="hover:text-primary transition-colors">saharacaferva@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== MOBILE BOTTOM NAV ===================== -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cream border-t border-divider-soft shadow-bottomnav">
+  <div class="flex justify-around items-center h-20 pb-safe">
+    <a href="index.html" class="flex flex-col items-center text-on-surface/60 hover:text-secondary transition-colors">
+      <span class="material-symbols-outlined mb-1">home</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Home</span>
+    </a>
+    <a href="menu.html" class="flex flex-col items-center text-secondary">
+      <span class="material-symbols-outlined filled mb-1">restaurant_menu</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Menu</span>
+    </a>
+    <a href="index.html#lounge" class="flex flex-col items-center text-on-surface/60 hover:text-secondary transition-colors">
+      <span class="material-symbols-outlined mb-1">cloud</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Lounge</span>
+    </a>
+    <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+       target="_blank" rel="noopener noreferrer"
+       class="flex flex-col items-center text-on-surface/60 hover:text-secondary transition-colors">
+      <span class="material-symbols-outlined mb-1">receipt_long</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Order</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+  // Mobile drawer
+  const menu = document.getElementById('mobileMenu');
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    menu.classList.add('open'); document.body.classList.add('menu-open');
+  });
+  document.getElementById('menuClose').addEventListener('click', () => {
+    menu.classList.remove('open'); document.body.classList.remove('menu-open');
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open'); document.body.classList.remove('menu-open');
+  }));
+
+  // Highlight active section chip on scroll
+  const sections = document.querySelectorAll('.menu-section');
+  const chips = document.querySelectorAll('.chip');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        chips.forEach(c => c.removeAttribute('data-active'));
+        const id = entry.target.id;
+        const chip = document.querySelector(`.chip[href="#${id}"]`);
+        if (chip) {
+          chip.setAttribute('data-active', 'true');
+          chip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

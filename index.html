@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sahara Cafe &amp; Grill — Authentic Yemeni Cuisine in Richmond, VA</title>
+<meta name="description" content="Sahara Cafe & Grill — authentic Yemeni and Mediterranean cuisine in Richmond, VA. Mandi, Kabsa, kabobs, shawarma, fresh juice and Turkish coffee. Order on Grubhub or visit us at 804 W Broad St." />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          surface: "#f8f9ff",
+          "surface-dim": "#d0dbed",
+          "surface-bright": "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#eff4ff",
+          "surface-container": "#e6eeff",
+          "surface-container-high": "#dee9fc",
+          "surface-container-highest": "#d9e3f6",
+          "on-surface": "#121c2a",
+          "on-surface-variant": "#554336",
+          "inverse-surface": "#27313f",
+          "inverse-on-surface": "#eaf1ff",
+          outline: "#887364",
+          "outline-variant": "#dbc2b0",
+          primary: "#8d4b00",
+          "on-primary": "#ffffff",
+          "primary-container": "#b15f00",
+          "on-primary-container": "#fffbff",
+          "primary-fixed": "#ffdcc3",
+          "primary-fixed-dim": "#ffb77d",
+          secondary: "#9d422b",
+          "on-secondary": "#ffffff",
+          "secondary-container": "#fd8c6f",
+          tertiary: "#55612e",
+          "on-tertiary": "#ffffff",
+          "tertiary-container": "#6e7a44",
+          background: "#f8f9ff",
+          cream: "#FDFBF7",
+          "divider-soft": "#F3E9E5",
+        },
+        fontFamily: {
+          serif: ['"Noto Serif"', "serif"],
+          sans: ['"Inter"', "system-ui", "sans-serif"],
+        },
+        maxWidth: {
+          container: "1280px",
+        },
+        boxShadow: {
+          card: "0 4px 16px rgba(157,66,43,0.12)",
+          float: "0 8px 32px rgba(157,66,43,0.20)",
+          header: "0 4px 16px rgba(157,66,43,0.08)",
+          bottomnav: "0 -4px 16px rgba(157,66,43,0.08)",
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #FDFBF7; color: #121c2a; font-family: "Inter", system-ui, sans-serif; }
+  h1, h2, h3, h4 { font-family: "Noto Serif", serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+  .label-caps { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; }
+  .h1-display { font-size: clamp(2rem, 5.5vw, 3rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+  .h2-display { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
+  .h3-display { font-size: 1.5rem; font-weight: 600; line-height: 1.4; }
+  .body-lg { font-size: 1.125rem; line-height: 1.6; }
+  .body-md { font-size: 1rem; line-height: 1.6; }
+
+  /* Mobile menu */
+  #mobileMenu { transform: translateX(-100%); transition: transform 0.3s ease; }
+  #mobileMenu.open { transform: translateX(0); }
+  body.menu-open { overflow: hidden; }
+
+  /* Bottom nav safe area */
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+  /* Add space below content so mobile bottom nav doesn't cover it */
+  @media (max-width: 767px) {
+    main { padding-bottom: 6rem; }
+  }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- ===================== HEADER ===================== -->
+<header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-sm border-b border-divider-soft shadow-header">
+  <div class="max-w-container mx-auto flex items-center justify-between px-4 md:px-12 h-16 md:h-20">
+    <!-- Mobile: hamburger -->
+    <button id="menuToggle" class="md:hidden text-primary active:scale-95 transition-transform" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    <!-- Brand -->
+    <a href="index.html" class="font-serif font-bold text-secondary text-xl md:text-2xl tracking-tight">
+      Sahara Cafe &amp; Grill
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex gap-8 items-center font-serif">
+      <a href="menu.html" class="text-on-surface/70 hover:text-primary transition-colors">Menu</a>
+      <a href="#lounge" class="text-primary border-b-2 border-primary pb-1">Lounge</a>
+      <a href="#about" class="text-on-surface/70 hover:text-primary transition-colors">About</a>
+      <a href="#visit" class="text-on-surface/70 hover:text-primary transition-colors">Visit</a>
+    </nav>
+
+    <!-- Right cluster -->
+    <div class="flex items-center gap-3 md:gap-4">
+      <button class="hidden md:inline-flex text-primary hover:text-primary-container transition-colors" aria-label="Cart">
+        <span class="material-symbols-outlined">shopping_cart</span>
+      </button>
+      <button class="hidden md:inline-flex text-primary hover:text-primary-container transition-colors" aria-label="Account">
+        <span class="material-symbols-outlined">person</span>
+      </button>
+      <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+         target="_blank" rel="noopener noreferrer"
+         class="md:hidden text-primary" aria-label="Order on Grubhub">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </a>
+      <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+         target="_blank" rel="noopener noreferrer"
+         class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2 rounded-lg font-medium hover:bg-primary-container transition-colors active:scale-95">
+        Order Now
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MOBILE MENU DRAWER ===================== -->
+<div id="mobileMenu" class="md:hidden fixed inset-0 z-50 bg-cream pt-20 px-6">
+  <button id="menuClose" class="absolute top-5 right-5 text-primary" aria-label="Close menu">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <nav class="flex flex-col gap-6 font-serif text-2xl">
+    <a href="menu.html" class="text-on-surface hover:text-primary">Menu</a>
+    <a href="#lounge" class="text-on-surface hover:text-primary">Lounge</a>
+    <a href="#about" class="text-on-surface hover:text-primary">About</a>
+    <a href="#visit" class="text-on-surface hover:text-primary">Visit</a>
+    <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+       target="_blank" rel="noopener noreferrer"
+       class="mt-4 inline-flex w-max bg-primary text-on-primary px-6 py-3 rounded-lg font-sans text-base">Order on Grubhub</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="relative min-h-[560px] md:min-h-[760px] flex items-end md:items-center justify-center overflow-hidden">
+    <img src="photos/kabob.jpg" alt="Chicken kabob skewers grilling over open flame on the charcoal grill"
+         class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent md:from-cream/90 md:via-cream/30 md:to-transparent"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 pb-12 pt-24 md:pt-32 md:pb-20 md:text-center">
+      <p class="label-caps text-primary-fixed-dim md:text-primary mb-3">Modern Yemeni Hospitality · Richmond, VA</p>
+      <h1 class="h1-display text-white md:text-on-surface mb-5 drop-shadow-md">
+        Authentic Yemeni Grill &amp; Mediterranean Cafe
+      </h1>
+      <p class="body-lg text-white/90 md:text-on-surface-variant max-w-2xl md:mx-auto mb-8">
+        From slow-roasted Mandi and Kabsa to fresh-pressed juices and stone-grilled kabobs — a menu rooted in tradition, served with warmth.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 md:justify-center">
+        <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+           target="_blank" rel="noopener noreferrer"
+           class="bg-primary text-on-primary px-7 py-3 rounded-lg label-caps shadow-card hover:-translate-y-0.5 transition-transform text-center">
+          Order Now
+        </a>
+        <a href="menu.html" class="bg-white/10 md:bg-transparent backdrop-blur-sm md:backdrop-blur-0 text-white md:text-secondary border border-white md:border-secondary px-7 py-3 rounded-lg label-caps hover:-translate-y-0.5 transition-transform text-center">
+          View Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT / ATMOSPHERE ===================== -->
+  <section id="about" class="py-16 md:py-24 px-6 md:px-12 max-w-container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <div class="order-2 md:order-1">
+        <img src="photos/feast.jpg"
+             alt="A large communal platter of Yemeni mandi with hands reaching in from all sides — guests sharing a feast"
+             loading="lazy"
+             class="w-full h-[320px] md:h-[500px] rounded-xl shadow-card object-cover" />
+      </div>
+      <div class="order-1 md:order-2">
+        <p class="label-caps text-secondary mb-3">Our Story</p>
+        <h2 class="h2-display text-on-surface mb-6">A Modern Sanctuary</h2>
+        <p class="body-lg text-on-surface-variant mb-5">
+          We believe in the power of shared moments. Our lounge is designed as a quiet, spacious retreat where the rich, earthy textures of saffron and terracotta create an atmosphere of sophisticated comfort.
+        </p>
+        <p class="body-md text-on-surface-variant mb-8">
+          Whether you are seeking a meticulously prepared Yemeni grill specialty or unwinding with our curated selection of premium hookah blends, every detail is crafted to provide an elevated experience focused on warmth and reliability.
+        </p>
+        <a href="#" class="inline-flex items-center gap-2 text-primary label-caps hover:text-primary-container transition-colors">
+          Learn About Our Heritage
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOUNGE FEATURES ===================== -->
+  <section id="lounge" class="bg-surface-container-low py-16 md:py-24 px-6 md:px-12">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="label-caps text-secondary mb-3">The Lounge</p>
+        <h2 class="h2-display text-on-surface mb-4">Three Pillars of Sahara</h2>
+        <p class="body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Unwind in our carefully curated atmosphere, designed for both intimate conversations and vibrant gatherings.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-8 shadow-card border border-divider-soft">
+          <div class="bg-divider-soft p-3 rounded-full w-max mb-5">
+            <span class="material-symbols-outlined filled text-secondary text-3xl">cloud</span>
+          </div>
+          <h3 class="h3-display text-on-surface mb-3">Premium Hookah</h3>
+          <p class="body-md text-on-surface-variant">Expertly prepared blends using the finest ingredients, served in traditional brass stems with ice-chilled hoses.</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-card border border-divider-soft">
+          <div class="bg-divider-soft p-3 rounded-full w-max mb-5">
+            <span class="material-symbols-outlined filled text-secondary text-3xl">local_cafe</span>
+          </div>
+          <h3 class="h3-display text-on-surface mb-3">Artisan Cafe</h3>
+          <p class="body-md text-on-surface-variant">Complement your experience with our selection of traditional teas, rich coffees, and modern beverages.</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-card border border-divider-soft md:col-span-2">
+          <div class="bg-divider-soft p-3 rounded-full w-max mb-5">
+            <span class="material-symbols-outlined filled text-secondary text-3xl">outdoor_grill</span>
+          </div>
+          <h3 class="h3-display text-on-surface mb-3">Authentic Grill</h3>
+          <p class="body-md text-on-surface-variant max-w-2xl">Savor the deep, earthy flavors of Yemeni heritage. Our kitchen crafts dishes that honor tradition while embracing contemporary culinary techniques.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CURATED MENU ===================== -->
+  <section id="menu" class="py-16 md:py-24 px-6 md:px-12 max-w-container mx-auto">
+    <div class="text-center mb-12 md:mb-16">
+      <p class="label-caps text-secondary mb-3">Curated Offerings</p>
+      <h2 class="h2-display text-on-surface mb-4">A Refined Selection</h2>
+      <p class="body-lg text-on-surface-variant max-w-2xl mx-auto">
+        A taste of what's on the menu — see the
+        <a href="menu.html" class="text-primary underline hover:no-underline">full menu</a> for everything.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <!-- Card 1: From the Grill -->
+      <div class="bg-white rounded-xl p-8 shadow-card border border-divider-soft hover:-translate-y-1 transition-transform duration-300">
+        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-primary">local_fire_department</span>
+        </div>
+        <h3 class="h3-display text-on-surface mb-6">From the Grill</h3>
+        <ul class="space-y-5">
+          <li class="border-b border-divider-soft pb-4">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="font-serif text-lg font-semibold">Mix Grill</span>
+              <span class="font-bold text-secondary">$18.00</span>
+            </div>
+            <p class="text-sm text-on-surface-variant">Lamb, chicken &amp; kafta kabob skewers with rice and salad</p>
+          </li>
+          <li class="border-b border-divider-soft pb-4">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="font-serif text-lg font-semibold">Lamb Kabob</span>
+              <span class="font-bold text-secondary">$15.00</span>
+            </div>
+            <p class="text-sm text-on-surface-variant">6 pieces, open-flame grilled with rice and green salad</p>
+          </li>
+          <li>
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="font-serif text-lg font-semibold">Chicken Kabob</span>
+              <span class="font-bold text-secondary">$13.00</span>
+            </div>
+            <p class="text-sm text-on-surface-variant">Marinated chicken breast with rice and salad</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Yemeni House Specialties (featured) -->
+      <div class="rounded-xl p-8 shadow-float relative overflow-hidden md:-mt-4 md:mb-4">
+        <img src="photos/specialty.jpg"
+             alt="Yemeni mendy — slow-cooked meat over basmati rice"
+             loading="lazy"
+             class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-br from-secondary/90 to-primary/90"></div>
+        <div class="relative z-10 text-white">
+          <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined">restaurant</span>
+          </div>
+          <h3 class="h3-display mb-4">Yemeni Specialties</h3>
+          <p class="body-md text-white/90 mb-6">Heritage dishes — slow-cooked, deeply spiced, served family-style.</p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex justify-between items-baseline border-b border-white/20 pb-3">
+              <span class="font-serif text-lg">Lamb Mendy</span>
+              <span class="font-bold">$16.00</span>
+            </li>
+            <li class="flex justify-between items-baseline border-b border-white/20 pb-3">
+              <span class="font-serif text-lg">Chicken Kabsaha</span>
+              <span class="font-bold">$14.00</span>
+            </li>
+            <li class="flex justify-between items-baseline border-b border-white/20 pb-3">
+              <span class="font-serif text-lg">Lamb Shank</span>
+              <span class="font-bold">$16.00</span>
+            </li>
+            <li class="flex justify-between items-baseline">
+              <span class="font-serif text-lg">Up Side Down</span>
+              <span class="font-bold">$16.00</span>
+            </li>
+          </ul>
+          <a href="menu.html#specialties" class="block w-full bg-white text-secondary py-3 rounded-lg label-caps text-center hover:bg-cream transition-colors">
+            See All Specialties
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Cafe & Juice Bar -->
+      <div class="bg-white rounded-xl p-8 shadow-card border border-divider-soft hover:-translate-y-1 transition-transform duration-300">
+        <div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-tertiary">emoji_food_beverage</span>
+        </div>
+        <h3 class="h3-display text-on-surface mb-6">Juice &amp; Coffee Bar</h3>
+        <ul class="space-y-5">
+          <li class="border-b border-divider-soft pb-4">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="font-serif text-lg font-semibold">Turkish Coffee</span>
+              <span class="font-bold text-secondary">$2.99</span>
+            </div>
+            <p class="text-sm text-on-surface-variant">Traditional cardamom-spiced</p>
+          </li>
+          <li class="border-b border-divider-soft pb-4">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="font-serif text-lg font-semibold">Arabian Coffee</span>
+              <span class="font-bold text-secondary">$2.99</span>
+            </div>
+            <p class="text-sm text-on-surface-variant">Light-roast, aromatic</p>
+          </li>
+          <li class="border-b border-divider-soft pb-4">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="font-serif text-lg font-semibold">Fresh Juice</span>
+              <span class="font-bold text-secondary">$3.50</span>
+            </div>
+            <p class="text-sm text-on-surface-variant">Pressed daily</p>
+          </li>
+          <li>
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="font-serif text-lg font-semibold">Chai with Milk</span>
+              <span class="font-bold text-secondary">$3.00</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="bg-surface-container-low py-16 md:py-24 px-6 md:px-12">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="label-caps text-secondary mb-3">Made With Care</p>
+        <h2 class="h2-display text-on-surface mb-4">From Our Kitchen</h2>
+        <p class="body-lg text-on-surface-variant max-w-2xl mx-auto">
+          A glimpse of what comes off our grill and out of our prep room.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <img src="photos/image%202.jpg"
+             alt="Lamb mendy with crispy onions over saffron rice and side sauces"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+        <img src="photos/image%204.jpg"
+             alt="Whole grilled chicken on saffron rice garnished with onions, parsley and a tomato rose"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+        <img src="photos/tabbouleh.jpg"
+             alt="Tabbouleh — fresh parsley salad with tomato, bulgur and lemon"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+        <img src="photos/image%203.jpg"
+             alt="Half chicken on yellow rice served with side sauces"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+        <img src="photos/catering.jpg"
+             alt="Catering trays — falafel, stuffed grape leaves, eggplant and chopped salad"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+        <img src="photos/image%205.jpg"
+             alt="Grilled lamb chops over saffron rice with arugula salad and dipping sauces"
+             loading="lazy"
+             class="w-full aspect-square object-cover rounded-lg shadow-card hover:scale-[1.02] transition-transform duration-300" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VISIT / LOCATION ===================== -->
+  <section id="visit" class="py-16 md:py-24 px-6 md:px-12 max-w-container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white rounded-xl p-6 md:p-12 shadow-card">
+      <div class="flex flex-col justify-center">
+        <img src="photos/storefront.jpg"
+             alt="Sahara Cafe & Grill storefront on West Broad Street, lit by a neon sign at night"
+             loading="lazy"
+             class="w-full h-48 md:h-56 rounded-lg object-cover mb-8 shadow-card" />
+        <p class="label-caps text-secondary mb-3">Visit Us</p>
+        <h2 class="h2-display text-on-surface mb-8">Find Us in Richmond</h2>
+        <div class="flex items-start gap-4 mb-6">
+          <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+          <div>
+            <h4 class="font-serif font-semibold text-lg">Address</h4>
+            <p class="body-md text-on-surface-variant">
+              <a href="https://maps.google.com/?q=804+W+Broad+St,+Richmond,+VA"
+                 target="_blank" rel="noopener noreferrer"
+                 class="hover:text-primary transition-colors">
+                804 W Broad Street<br />Richmond, VA
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 mb-6">
+          <span class="material-symbols-outlined text-primary mt-1">schedule</span>
+          <div>
+            <h4 class="font-serif font-semibold text-lg">Hours</h4>
+            <p class="body-md text-on-surface-variant">
+              Open daily<br />
+              <span class="font-semibold text-on-surface">9:00 AM – 2:00 AM</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 mb-6">
+          <span class="material-symbols-outlined text-primary mt-1">phone</span>
+          <div>
+            <h4 class="font-serif font-semibold text-lg">Phone</h4>
+            <p class="body-md text-on-surface-variant">
+              <a href="tel:+18048338223" class="hover:text-primary transition-colors">(804) 833-8223</a>
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 mb-8">
+          <span class="material-symbols-outlined text-primary mt-1">mail</span>
+          <div>
+            <h4 class="font-serif font-semibold text-lg">Email</h4>
+            <p class="body-md text-on-surface-variant">
+              <a href="mailto:saharacaferva@gmail.com" class="hover:text-primary transition-colors">saharacaferva@gmail.com</a>
+            </p>
+          </div>
+        </div>
+        <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 w-max bg-primary text-on-primary px-7 py-3 rounded-lg label-caps hover:-translate-y-0.5 transition-transform">
+          Order on Grubhub
+          <span class="material-symbols-outlined text-base">open_in_new</span>
+        </a>
+      </div>
+      <div class="h-[320px] md:h-[480px] rounded-lg overflow-hidden bg-surface-container">
+        <iframe
+          title="Map of Sahara Cafe & Grill at 804 W Broad St, Richmond, VA"
+          src="https://maps.google.com/maps?q=804%20W%20Broad%20St%2C%20Richmond%2C%20VA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-cream border-t border-divider-soft">
+  <div class="max-w-container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-12 md:py-16 px-6 md:px-12">
+    <div class="flex flex-col gap-3">
+      <span class="font-serif italic text-lg text-on-surface">Sahara Cafe &amp; Grill</span>
+      <p class="text-sm text-on-surface-variant max-w-xs">
+        © 2026 Sahara Cafe &amp; Grill. Modern Yemeni Hospitality.
+      </p>
+    </div>
+    <div class="flex flex-col gap-2 text-sm text-on-surface-variant">
+      <a href="https://maps.google.com/?q=804+W+Broad+St,+Richmond,+VA"
+         target="_blank" rel="noopener noreferrer"
+         class="hover:text-primary transition-colors">804 W Broad St, Richmond, VA</a>
+      <a href="menu.html" class="hover:text-primary transition-colors">Full Menu</a>
+      <a href="tel:+18048338223" class="hover:text-primary transition-colors">(804) 833-8223</a>
+      <a href="https://saharacafeandgrill.eat24hour.com" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">saharacafeandgrill.eat24hour.com ↗</a>
+    </div>
+    <div class="flex flex-col gap-2 text-sm text-on-surface-variant md:items-end">
+      <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+         target="_blank" rel="noopener noreferrer"
+         class="hover:text-primary transition-colors">Order on Grubhub ↗</a>
+      <a href="https://www.facebook.com/SaharaCafeAndGrill/"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-1.5 hover:text-primary transition-colors">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
+        </svg>
+        Follow on Facebook
+      </a>
+      <a href="#visit" class="hover:text-primary transition-colors">Hours &amp; Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== MOBILE BOTTOM NAV ===================== -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cream border-t border-divider-soft shadow-bottomnav">
+  <div class="flex justify-around items-center h-20 pb-safe">
+    <a href="index.html" class="flex flex-col items-center text-secondary">
+      <span class="material-symbols-outlined filled mb-1">home</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Home</span>
+    </a>
+    <a href="menu.html" class="flex flex-col items-center text-on-surface/60 hover:text-secondary transition-colors">
+      <span class="material-symbols-outlined mb-1">restaurant_menu</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Menu</span>
+    </a>
+    <a href="#visit" class="flex flex-col items-center text-on-surface/60 hover:text-secondary transition-colors">
+      <span class="material-symbols-outlined mb-1">place</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Visit</span>
+    </a>
+    <a href="https://www.grubhub.com/restaurant/sahara-cafe--grill-802-w-broad-st-richmond/13774776"
+       target="_blank" rel="noopener noreferrer"
+       class="flex flex-col items-center text-on-surface/60 hover:text-secondary transition-colors">
+      <span class="material-symbols-outlined mb-1">receipt_long</span>
+      <span class="font-serif text-[10px] uppercase tracking-widest">Order</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+  const menu = document.getElementById('mobileMenu');
+  const openBtn = document.getElementById('menuToggle');
+  const closeBtn = document.getElementById('menuClose');
+  const open = () => { menu.classList.add('open'); document.body.classList.add('menu-open'); };
+  const close = () => { menu.classList.remove('open'); document.body.classList.remove('menu-open'); };
+  openBtn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+</script>
+
+</body>
+</html>

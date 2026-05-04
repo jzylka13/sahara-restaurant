@@ -1,0 +1,18 @@
+# Original Stitch design source folders — not part of the live site
+sahara_grill_cafe/
+sahara_grill_lounge_home/
+sahara_grill_lounge_home_mobile/
+
+# Build artifacts / local-only files
+sahara-deploy.zip
+image.png
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Claude Code local state
+.claude/
+memory/
