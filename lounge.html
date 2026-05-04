@@ -75,6 +75,49 @@
   }
   body > * { position: relative; z-index: 1; }
 
+  /* ===== Smoke hero ===== */
+  .smoke-hero { background: radial-gradient(ellipse at 50% 0%, #1a1f2a 0%, #0c1015 55%, #050709 100%); }
+  .smoke-parallax { position: absolute; inset: 0; will-change: transform;
+    transform: translateY(calc(var(--sy, 0) * -0.18 * 1px)); }
+  .smoke-layer { position: absolute; inset: -25%; pointer-events: none;
+    filter: blur(80px) saturate(0.8); mix-blend-mode: screen; will-change: transform; }
+  .smoke-1 {
+    background:
+      radial-gradient(circle at 25% 40%, rgba(255,255,255,0.32), transparent 38%),
+      radial-gradient(circle at 75% 60%, rgba(255,180,130,0.20), transparent 42%);
+    animation: smoke-drift-1 22s ease-in-out infinite alternate;
+  }
+  .smoke-2 {
+    background:
+      radial-gradient(circle at 70% 35%, rgba(255,255,255,0.24), transparent 36%),
+      radial-gradient(circle at 30% 80%, rgba(200,160,120,0.18), transparent 42%);
+    animation: smoke-drift-2 30s ease-in-out infinite alternate;
+  }
+  .smoke-3 {
+    background: radial-gradient(circle at 50% 50%, rgba(255,200,160,0.18), transparent 48%);
+    animation: smoke-drift-3 16s ease-in-out infinite alternate;
+  }
+  @keyframes smoke-drift-1 {
+    from { transform: translate3d(0%, 0%, 0) scale(1) rotate(0deg); }
+    to   { transform: translate3d(15%, -10%, 0) scale(1.18) rotate(8deg); }
+  }
+  @keyframes smoke-drift-2 {
+    from { transform: translate3d(-5%, 5%, 0) scale(1.10) rotate(0deg); }
+    to   { transform: translate3d(-15%, -5%, 0) scale(0.95) rotate(-10deg); }
+  }
+  @keyframes smoke-drift-3 {
+    from { transform: translate3d(8%, -4%, 0) scale(0.9); }
+    to   { transform: translate3d(-10%, 8%, 0) scale(1.22); }
+  }
+  /* Vignette tightens edges so smoke fades into blackness */
+  .smoke-vignette { background:
+    radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(12,16,21,0.6) 80%, rgba(12,16,21,0.95) 100%),
+    linear-gradient(to top, #0c1015 0%, transparent 35%); }
+  @media (prefers-reduced-motion: reduce) {
+    .smoke-1, .smoke-2, .smoke-3 { animation: none; }
+    .smoke-parallax { transform: none; }
+  }
+
   /* Auto-scrolling carousel */
   .scroll-frame { mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%); }
   @keyframes scroll-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -143,12 +186,14 @@
 
 <main>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="relative min-h-[480px] md:min-h-[600px] flex items-end overflow-hidden">
-    <img src="lounge%20photos/2.png"
-         alt="A guest in the lounge exhaling smoke from a hookah session"
-         class="absolute inset-0 w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-gradient-to-t from-night via-night/70 to-night/30"></div>
+  <!-- ===================== HERO (animated smoke) ===================== -->
+  <section id="smokeHero" class="smoke-hero relative min-h-[520px] md:min-h-[680px] flex items-end overflow-hidden" aria-label="Sahara Hookah hero">
+    <div class="smoke-parallax">
+      <div class="smoke-layer smoke-1"></div>
+      <div class="smoke-layer smoke-2"></div>
+      <div class="smoke-layer smoke-3"></div>
+    </div>
+    <div class="absolute inset-0 smoke-vignette pointer-events-none"></div>
     <div class="relative z-10 max-w-container mx-auto px-6 md:px-12 pb-12 md:pb-20 pt-24 w-full">
       <p class="label-caps text-primary-fixed-dim mb-3 hero-text-shadow">Sahara Hookah · Next Door</p>
       <h1 class="h1-display text-ink mb-5 hero-text-shadow max-w-3xl">
@@ -166,8 +211,10 @@
         <a href="https://www.instagram.com/sahara_hookahh/"
            target="_blank" rel="noopener noreferrer"
            class="bg-white/10 backdrop-blur-sm text-ink border border-white/40 px-7 py-3 rounded-lg label-caps hover:-translate-y-0.5 transition-transform text-center inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
           Follow on Instagram
-          <span class="material-symbols-outlined text-base">open_in_new</span>
         </a>
       </div>
     </div>
@@ -189,12 +236,14 @@
         <img src="lounge%20photos/3.png" alt="Hookah, drinks and a journal under neon light" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
         <img src="lounge%20photos/4.png" alt="Friends laughing around a hookah at the lounge" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
         <img src="lounge%20photos/5.png" alt="Glass hookah on a tabletop with smoke billowing up" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
+        <img src="lounge%20photos/6.png" alt="Patio session with hookah, food and a city skyline view" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
         <!-- Set 2 (duplicate for seamless loop) -->
         <img src="lounge%20photos/1.png" alt="" aria-hidden="true" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
         <img src="lounge%20photos/2.png" alt="" aria-hidden="true" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
         <img src="lounge%20photos/3.png" alt="" aria-hidden="true" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
         <img src="lounge%20photos/4.png" alt="" aria-hidden="true" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
         <img src="lounge%20photos/5.png" alt="" aria-hidden="true" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
+        <img src="lounge%20photos/6.png" alt="" aria-hidden="true" class="h-72 md:h-96 w-auto rounded-xl shadow-card flex-shrink-0" />
       </div>
     </div>
   </section>
@@ -357,6 +406,22 @@
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     menu.classList.remove('open'); document.body.classList.remove('menu-open');
   }));
+
+  // Smoke hero scroll parallax — sets --sy on the section based on how far into the hero we've scrolled.
+  const smokeHero = document.getElementById('smokeHero');
+  if (smokeHero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let ticking = false;
+    function updateSmoke() {
+      const r = smokeHero.getBoundingClientRect();
+      const sy = Math.max(0, -r.top);
+      smokeHero.style.setProperty('--sy', sy);
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(updateSmoke); ticking = true; }
+    }, { passive: true });
+    updateSmoke();
+  }
 </script>
 
 </body>
